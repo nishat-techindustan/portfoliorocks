@@ -1,5 +1,6 @@
 <template>
-  <section class="home-section">
+  <section class="home-section" >
+    <image-dialog v-if="openModal"/>
     <div class="section-heading">
       <h1>Travel & Nature Photographer</h1>
     </div>
@@ -11,7 +12,7 @@
     </article>
     <article class="image-grids">
       <div class="image-section-card" v-for="image in getAllImages" :key="image.id">
-        <div>
+        <div @click="showModel({id: image.id, show: true})">
           <img height="300px" width="400px" :src="image.largeImageURL" :alt="image.type"/>
         </div>
         <div class="user-info-block flex-center">
@@ -25,13 +26,18 @@
 
 <script>
 // @ is an alias to /src
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
+import ImageDialog from '../components/ImageDialog'
 export default {
   name: 'Home',
+  components: {
+    ImageDialog
+  },
   methods: {
-    ...mapActions(['getImages'])
+    ...mapActions(['getImages', 'showModel'])
   },
   computed: {
+    ...mapState(['openModal']),
     getAllImages() {
       return this.$store.state.images
     }
@@ -70,3 +76,4 @@ export default {
         width: 50px
         border-radius: 50%
 </style>
+

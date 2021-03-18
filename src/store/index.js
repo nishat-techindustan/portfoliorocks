@@ -9,6 +9,8 @@ export default new Vuex.Store({
   state: {
     images: [],
     imageLoading: false,
+    singleImageData: {},
+    openModal: false,
     videos: [],
     videoLoading: false
   },
@@ -24,6 +26,13 @@ export default new Vuex.Store({
     },
     videoLoading(state, loading) {
       state.loading = loading
+    },
+    showModal(state, show) {
+      state.openModal = show
+    },
+    showSingleImageData(state, index) {
+      state.singleImageData = state.images.find(image => image.id === index)
+      console.log(state.singleImageData, 'state.singleImageData')
     }
   },
   actions: {
@@ -38,6 +47,10 @@ export default new Vuex.Store({
         console.error(error, 'error on image loading')
         context.commit('imageLoading', false)
       }
+    },
+    showModel(context, payload) {
+      context.commit('showModal', payload.show)
+      context.commit('showSingleImageData', payload.id)
     },
     async getVideos(context) {
       context.commit('videoLoading', true)

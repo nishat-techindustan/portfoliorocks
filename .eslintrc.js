@@ -16,6 +16,8 @@ module.exports = {
     "space-before-function-paren": "off",
     "padded-blocks": "off",
     "no-trailing-spaces": "off",
-    "no-multiple-empty-lines": "off"
+    "no-multiple-empty-lines": "off",
+    "eol-last": "warn",
+    "indent": "warn"
   }
 }
