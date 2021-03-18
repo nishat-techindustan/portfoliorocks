@@ -12,13 +12,16 @@
       </p>
     </article>
     <article class="image-grids">
-      <div class="image-section-card" v-for="image in getAllImages" :key="image.id">
+      <div class="image-section-card" v-for="video in getAllVideos" :key="video.id">
         <div>
-          <img height="300px" width="400px" :src="image.largeImageURL" :alt="image.type"/>
+          <video width="400px" height="224px" controls>
+          <source :src="video.videos.large.url" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
         </div>
         <div class="user-info-block flex-center">
-          <div style="padding-right: 10px;">{{image.user}}</div>
-          <img :src="image.userImageURL" :alt="image.type"/>
+          <div style="padding-right: 10px;">{{video.user}}</div>
+          <img :src="video.userImageURL" :alt="video.type"/>
         </div>
       </div>
     </article>
@@ -31,15 +34,15 @@ import { mapActions } from 'vuex'
 export default {
   name: 'Home',
   methods: {
-    ...mapActions(['getImages'])
+    ...mapActions(['getVideos'])
   },
   computed: {
-    getAllImages() {
-      return this.$store.state.images
+    getAllVideos() {
+      return this.$store.state.videos
     }
   },
   async created () {
-    await this.getImages()
+    await this.getVideos()
   }
 }
 </script>
@@ -59,13 +62,8 @@ export default {
 .image-section-card
     background: #d2d1d0
     width: 400px
-    height: 360px
-    box-shadow: 2px 1px 3px #c3c2c2
+    height: 284px
     margin: 20px
-    &:hover
-      filter: brightness(0.4)
-      transform: scale(1.03)
-      overflow: hidden
     .user-info-block
       img
         height: 50px

@@ -24,7 +24,7 @@
         </div>
         <div class="about-block">
           <div style="margin: 2rem;">
-            <form class="flex-col-center">
+            <form style="align-items: inherit;" class="flex-col-center">
                 <input placeholder="Your Name" class="input-block" type="text" >
                 <input placeholder="Your Email" class="input-block" type="text" >
                 <input placeholder="Your Title" class="input-block" type="text" >
@@ -56,9 +56,6 @@
         width: 30vw
     .left-block
         background: #eee
-        img
-        height: 70vh
-        width: 30vw
 </style>
 <script>
 import Footer from '../components/Footer'
