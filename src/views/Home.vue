@@ -66,6 +66,7 @@ export default {
     height: 360px
     box-shadow: 2px 1px 3px #c3c2c2
     margin: 20px
+    z-index: 10
     &:hover
       filter: brightness(0.4)
       transform: scale(1.03)

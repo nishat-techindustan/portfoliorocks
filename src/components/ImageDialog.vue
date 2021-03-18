@@ -57,6 +57,7 @@ export default {
     width: 100%
     top: 0%
     left: 0%
+    z-index: 11
 .image-dialog
     height: 670px
     position: absolute
@@ -67,6 +68,7 @@ export default {
     
 .photo
     width: 800px
+    height: 530px
 
 .user
     height: 50px
