@@ -1,7 +1,7 @@
 <template>
   <section class="home-section">
     <div class="section-heading">
-      <h1>My Portfolio</h1>
+      <h1>{{ $t('myPortfolio') }}</h1>
     </div>
     <article class="section-heading">
       <p style="margin: 2rem 0;">

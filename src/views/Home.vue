@@ -2,12 +2,11 @@
   <section class="home-section" >
     <image-dialog v-if="openModal"/>
     <div class="section-heading">
-      <h1>Travel & Nature Photographer</h1>
+      <h1>{{ $t('homeTitle') }}</h1>
     </div>
     <article class="section-heading">
       <p style="margin: 2rem 0;">
-        I sat high in the mountains and thought of all those ants that surrounded me.
-        Remember my friends, we must not allow the bees to disappear.
+       {{ $t('subHomeTitle') }}
       </p>
     </article>
     <article class="image-grids">

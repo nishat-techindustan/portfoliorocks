@@ -7,13 +7,9 @@
         </div>
         <div class="about-block">
           <div style="margin: 2rem;">
-            <h1>Hi! I'm Mr Anonymous.<br>
-                V for Vendetta</h1>
+            <h1>{{ $t('self.intro') }}</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur recusandae esse,<br> 
-              vel commodi rem similique totam quis, corrupti rerum veritatis numquam ipsa,<br>
-              nam explicabo nulla! Accusamus deserunt repellendus perspiciatis nulla.<br>
-              Nulla, porro? Quos architecto vero itaque temporibus in illo nam perferendis ex nemo distinctio?
+              {{ $t('self.about') }}
             </p>
           </div>
         </div>

@@ -37,14 +37,14 @@
 <script>
 import { mapMutations, mapState } from 'vuex'
 export default {
-    name: 'ImageDialog',
-    computed: {
-        ...mapState(['singleImageData']),
-        getTags() {
-            return this.singleImageData.tags.split(',')
-        }
-    },
-    methods: {
+  name: 'ImageDialog',
+  computed: {
+    ...mapState(['singleImageData']),
+    getTags() {
+      return this.singleImageData.tags.split(',')
+    }
+  },
+  methods: {
     ...mapMutations(['showModal'])
   }
 }
